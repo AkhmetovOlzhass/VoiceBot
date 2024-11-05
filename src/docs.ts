@@ -10,7 +10,7 @@ export const createDocx = async (filename: string, content: string) => {
                     new Paragraph({
                         children: [
                             new TextRun({
-                                text: content,
+                                text: content, 
                                 bold: true,
                             }),
                         ],
