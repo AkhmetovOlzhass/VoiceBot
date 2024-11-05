@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
-import { UserTengri } from "./models/UserTengri";
+import TelegramBot from 'node-telegram-bot-api';
 
 dotenv.config();
 
-export function mongoConnect(bot) {
+export function mongoConnect(bot: TelegramBot) {
     mongoose.connect(process.env.MONGO_URI as string)
         .then(async () => {
             console.log('Connected to MongoDB');
