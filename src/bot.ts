@@ -16,22 +16,26 @@ mongoConnect(bot);
 export const start = () => {
     bot.on('audio', async (msg: TelegramBot.Message) => {
         const chatId = msg.chat.id;
-        const username = msg.from?.username;
-
-        if (!username) {
-            bot.sendMessage(chatId, `Не удалось определить имя пользователя.`);
-            return;
+        try{
+            const username = msg.from?.username;
+    
+            if (!username) {
+                bot.sendMessage(chatId, `Не удалось определить имя пользователя.`);
+                return;
+            }
+    
+            let user = await UserTengri.findOne({ username });
+            if (!user) {
+                bot.sendMessage(chatId, `Вы не зарегистрированы, введите команду /start`);
+                return;
+            }
+    
+            bot.sendMessage(chatId, `Загрузка...`);
+    
+            await handleVoiceMessage(bot, msg);
+        }catch{
+            bot.sendMessage(chatId, `Произошла ошибка`);
         }
-
-        let user = await UserTengri.findOne({ username });
-        if (!user) {
-            bot.sendMessage(chatId, `Вы не зарегистрированы, введите команду /start`);
-            return;
-        }
-
-        bot.sendMessage(chatId, `Загрузка...`);
-
-        await handleVoiceMessage(bot, msg);
     });
 
     // Ответ на команду /start
