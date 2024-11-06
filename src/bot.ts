@@ -194,7 +194,7 @@ async function processLargeAudio(filePath: string) {
             const audioText = await convertAudio(chunkPath); // Преобразование аудиофрагмента в текст
             combinedText += audioText + '\n'; // Добавление текста фрагмента с переводом строки
             fs.unlinkSync(chunkPath); // Удаление временного файла после обработки
-        }
+        } 
 
         // Создаем .docx файл с объединенным текстом
         const docxPath = `output_${Date.now()}.docx`;
