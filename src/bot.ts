@@ -50,7 +50,7 @@ export const start = () => {
             try {
                 const browser = await puppeteer.launch({
                     headless: true,
-                    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome',
+                    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome-stable',
                     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
                 });
                 const page = await browser.newPage();

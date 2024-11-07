@@ -20,11 +20,14 @@ RUN npm install
 # Копирование всего кода приложения
 COPY . .
 
+# Компиляция TypeScript, если используется
+RUN npm run build
+
 # Экспонирование порта для Heroku
 EXPOSE 3000
 
 # Установка переменной окружения для Puppeteer
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
 # Команда для запуска приложения
 CMD ["npm", "start"]
