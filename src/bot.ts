@@ -48,11 +48,7 @@ export const start = () => {
             bot.sendMessage(chatId, 'Начинаю скачивание файла...');
 
             try {
-                const browser = await puppeteer.launch({ 
-                    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome', // путь к Chrome
-                    headless: true, // для безголового режима
-                    args: ['--no-sandbox', '--disable-setuid-sandbox'] // параметры для платформы деплоя
-                  });
+                const browser = await puppeteer.launch({ headless: true });
                 const page = await browser.newPage();
 
                 const downloadPath = path.resolve(__dirname, 'downloads');
