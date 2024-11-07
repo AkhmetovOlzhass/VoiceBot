@@ -49,7 +49,6 @@ export const start = () => {
 
             try {
                 const browser = await puppeteer.launch({
-                    executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome', // путь к Chrome
                     headless: true, // для безголового режима
                     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
                   });
