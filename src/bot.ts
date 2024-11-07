@@ -49,9 +49,10 @@ export const start = () => {
 
             try {
                 const browser = await puppeteer.launch({
-                    headless: true, // для безголового режима
+                    headless: true,
+                    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || '/usr/bin/google-chrome',
                     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
-                  });
+                });
                 const page = await browser.newPage();
 
                 const downloadPath = path.resolve(__dirname, 'downloads');

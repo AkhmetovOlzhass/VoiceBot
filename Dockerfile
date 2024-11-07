@@ -1,29 +1,29 @@
-# Базовый образ
+# Базовый образ с Node.js
 FROM node:16
 
-# Устанавливаем зависимости для Puppeteer
+# Установка зависимостей для Chrome и Puppeteer
 RUN apt-get update && apt-get install -y wget gnupg \
     && wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
     && apt-get update && apt-get install -y google-chrome-stable ffmpeg \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
-# Устанавливаем рабочую директорию
+# Установка рабочей директории
 WORKDIR /app
 
-# Копируем package.json и package-lock.json
+# Копирование файлов package.json и package-lock.json
 COPY package*.json ./
 
-# Устанавливаем зависимости
+# Установка зависимостей
 RUN npm install
 
-# Копируем остальные файлы проекта
+# Копирование всего кода приложения
 COPY . .
 
-# Открываем порт
+# Экспонирование порта для Heroku
 EXPOSE 3000
 
-# Устанавливаем переменные окружения для Puppeteer
+# Установка переменной окружения для Puppeteer
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome
 
 # Команда для запуска приложения
