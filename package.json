@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "npm run install-chrome && node dist/index.js",
     "build": "tsc",
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "npm run install-chrome && ts-node-dev --respawn --transpile-only src/index.ts",
+    "install-chrome": "npx puppeteer install chrome",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
