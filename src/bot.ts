@@ -49,6 +49,7 @@ export const start = () => {
 
             try {
                 const browser = await puppeteer.launch({
+                    executablePath: process.env.CHROME_BIN || '/app/.apt/usr/bin/google-chrome',
                     args: ['--no-sandbox', '--disable-setuid-sandbox'], 
                     headless: true
                 });
