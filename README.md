@@ -1,32 +1,32 @@
-# 🎙️ VoiceBot – Телеграм-бот для транскрибации аудио  
+# 🎙️ VoiceBot – Telegram Bot for Audio Transcription  
 
-VoiceBot – это **Telegram-бот**, который принимает **аудиофайл** или **ссылку на облако Mail.ru**, транскрибирует его с помощью **OpenAI Whisper** и возвращает готовый **DOCX-файл**.  
+VoiceBot is a **Telegram bot** that accepts **an audio file** or **a link to Mail.ru Cloud**, transcribes it using **OpenAI Whisper**, and returns a **DOCX file** with the transcribed text.  
 
-## 🚀 Стек технологий  
-- **Backend:** Node.js (Express, TypeScript, Pupeteer)  
-- **AI:** OpenAI Whisper для распознавания речи  
-- **Файлы:** Mail.ru Cloud  
-- **Вывод:** DOCX (через `docx` npm-пакет)  
+## 🚀 Tech Stack  
+- **Backend:** Node.js (Express, TypeScript, Puppeteer)  
+- **AI:** OpenAI Whisper for speech recognition  
+- **File Handling:** Mail.ru Cloud  
+- **Output Format:** DOCX (via `docx` npm package)  
 
-## 🎯 Функционал  
-✅ Принимает **аудиофайл** или **ссылку на Mail.ru Cloud**  
-✅ Загружает и обрабатывает файл  
-✅ Использует **Whisper API** для транскрибации  
-✅ Генерирует **DOCX-файл** с текстом и отправляет его пользователю  
+## 🎯 Features  
+✅ Accepts **audio files** or **Mail.ru Cloud links**  
+✅ Downloads and processes the file  
+✅ Uses **Whisper API** for transcription  
+✅ Generates a **DOCX file** with the transcribed text and sends it back to the user  
 
-## 🛠 Установка и запуск  
-1️⃣ **Клонируй репозиторий**  
+## 🛠 Installation & Setup  
+1️⃣ **Clone the repository**  
 ```bash
 git clone https://github.com/AkhmetovOlzhass/VoiceBot.git  
 cd VoiceBot
 ```
 
-2️⃣ **Установи зависимости**
+2️⃣ **Install dependencies**
 ```bash
 npm install
 ```
 
-3️⃣ **Создай .env файл и настрой переменные окружения**
+3️⃣ **Create a .env file and set environment variables**
 ```env
 TELEGRAM_BOT_TOKEN=
 MONGO_URI=
@@ -34,14 +34,14 @@ PORT=
 OPENAI=
 ```
 
-4️⃣ **Запусти сервер**
+4️⃣ **Run the server**
 ```bash
 npm run dev  
 ```
 
-## 🔗 Ссылки
-📜 **Документация OpenAI Whisper**: openai.com/whisper  
-📜 **Документация Telegram Bot API**: core.telegram.org/bots/api  
-📩 **Связь**: @Shakarymm  
+## 🔗 Useful Links
+📜 **OpenAI Whisper Documentation**: openai.com/whisper  
+📜 **Telegram Bot API Documentation**: core.telegram.org/bots/api  
+📩 **Contact**: @Shakarymm  
 
-🚀 **Разработка в процессе** – добавляются новые фичи!
+🚀 **Development in progress** – new features coming soon!
