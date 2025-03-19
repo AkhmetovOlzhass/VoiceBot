@@ -39,7 +39,7 @@ OPENAI=
 npm run dev  
 ```
 
-##🔗 Ссылки
+## 🔗 Ссылки
 📜 **Документация OpenAI Whisper**: openai.com/whisper
 📜 **Документация Telegram Bot API**: core.telegram.org/bots/api
 📩 **Связь**: @Shakarymm
