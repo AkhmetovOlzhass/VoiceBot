@@ -40,8 +40,8 @@ npm run dev
 ```
 
 ## 🔗 Ссылки
-📜 **Документация OpenAI Whisper**: openai.com/whisper
-📜 **Документация Telegram Bot API**: core.telegram.org/bots/api
-📩 **Связь**: @Shakarymm
+📜 **Документация OpenAI Whisper**: openai.com/whisper  
+📜 **Документация Telegram Bot API**: core.telegram.org/bots/api  
+📩 **Связь**: @Shakarymm  
 
 🚀 **Разработка в процессе** – добавляются новые фичи!
